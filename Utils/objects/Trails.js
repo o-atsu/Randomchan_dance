@@ -1,4 +1,4 @@
-import * as THREE from '../../libs/build/three.module.js';
+//import * as THREE from '../../libs/build/three.module.js';
 import { computePos } from '../shaders/computePos.js';
 import { computeVel } from '../shaders/computeVel.js';
 import { computeVel2 } from '../shaders/computeVel2.js';
