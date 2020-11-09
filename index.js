@@ -128,7 +128,7 @@ function init() {
     scene.add(axes);
 
     // trail num, trail length
-    let trail = new Trails(renderer, 2000, 70);
+    let trail = new Trails(renderer, 200, 40);
 
     scene.add(trail.obj);
 
@@ -176,6 +176,7 @@ function init() {
                         randomchanMotion = _outRandonchanMotion;
 
                         /*****音楽のロード*****/
+/*
                         audioLoader.load(
                             audioPath,
                             function (buffer) {
@@ -184,6 +185,7 @@ function init() {
                                 sound.setLoop(true);
                                 listener.position.z = 1;
                                 sound.setVolume(0.1);
+*/
 
                                 /*****option:カメラモーションのロード*****/
                                 mmdLoader.loadAnimation(
@@ -193,20 +195,25 @@ function init() {
                                         console.log(cameraMotionPath + ' is loaded');
                                         cameraMotion = _outCameraMotion;
 
+/*
                                         //Playボタンの設置
                                         playBtn = document.createElement('button');
                                         playBtn.innerText = "Play";
                                         document.body.appendChild(playBtn);
                                         playBtn.addEventListener('click', play);
+*/
+										play();
 
                                     },
                                     onProgress,
                                     onError
                                 );
+/*
                             },
                             onProgress,
                             onError
                         );
+*/
                     },
                     onProgress,
                     onError
@@ -301,9 +308,9 @@ function init() {
     add_screen();
 
     //// オブジェクト
-    const crt = "./atsu_samples/models/Parts/brawn_kan.fbx";
-    const display = "./atsu_samples/models/Parts/display.fbx";
-    const PC = "./atsu_samples/models/Parts/PC_1.fbx";
+    const crt = "./models/Parts/brawn_kan.fbx";
+    const display = "./models/Parts/display.fbx";
+    const PC = "./models/Parts/PC_1.fbx";
     const crtobj = importFBX(crt, new THREE.Vector3(130.0, -4.0, 50.0), new THREE.Vector3(0.0, 40.0, 270.0), new THREE.Vector3(0.05, 0.05, 0.05), 2.2, scene);
     const displayobj = importFBX(display, new THREE.Vector3(0.0, 70.0, 132.0), new THREE.Vector3(20.0, 0.0, 0.0), new THREE.Vector3(0.05, 0.05, 0.05), 1.2, scene);
     const PCobj = importFBX(PC, new THREE.Vector3(61.0, 16.0, 140.0), new THREE.Vector3(0.0, 70.0, 20.0), new THREE.Vector3(0.05, 0.05, 0.05), 1.7, scene);
