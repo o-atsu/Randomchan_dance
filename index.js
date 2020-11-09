@@ -100,12 +100,14 @@ function init() {
 
     let mixer;
 
+/*
     //Sound
     let listener = new THREE.AudioListener();
     camera.add(listener);
 
     let sound = new THREE.Audio(listener);
     let audioLoader = new THREE.AudioLoader();
+*/
 
     let pauseBool = new Boolean(false);
 
@@ -229,7 +231,7 @@ function init() {
             animation: randomchanMotion,
             physics: true
         });
-        mmdHelper.add(sound);
+//        mmdHelper.add(sound);
         mmdHelper.add(camera, {
             animation: cameraMotion,
             physics: true
