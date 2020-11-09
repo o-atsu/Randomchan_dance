@@ -44,7 +44,7 @@ function init() {
     const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
     camera.position.set(0, 30, +100);
     const orbit_cam = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-    orbit_cam.position.set(0, 30, +100);
+    orbit_cam.position.set(0, 20, +60);
 
     //Renderer
     const renderer = new THREE.WebGLRenderer({
@@ -70,6 +70,7 @@ function init() {
 
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
+	orbit_cam.lookAt(0, 13, 0);
 
     //Mesh
     const geometry = new THREE.SphereGeometry(300, 30, 30);
@@ -84,7 +85,7 @@ function init() {
     //const modelPath = 'kizunaai/kizunaai.pmx';
     const modelPath = 'randomchan82/random-chan82.pmx';
     const motionPath = 'Addiction/[A]ddiction_Lat式.vmd';
-    const audioPath = 'Addiction/addiction.wav';
+    //const audioPath = 'Addiction/addiction.wav';
     //const motionPath = 'shin/shin.vmd';
     //const audioPath = 'shin/shin.wav';
     const cameraMotionPath = 'Addiction/camera.vmd';
@@ -125,9 +126,11 @@ function init() {
     scene.add(ambientLight);
     */
 
+	/*
     const axes = new THREE.AxesHelper(40);
     axes.position.set(0, 0, 0);
     scene.add(axes);
+	*/
 
     // trail num, trail length
     let trail = new Trails(renderer, 200, 40);
